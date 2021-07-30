@@ -40,35 +40,39 @@ export class HomeDashboardComponent implements OnInit {
   data_predict: any;
   data_local: any;
 
-  multi = [
+  multi: any = [
     {
-        "name": "Prediction",
-        "series": [
-            {
-                "name": "Jan",
-                "value": 0
-            },
-            {
-                "name": "Feb",
-                "value": 0
-            },
-            {
-                "name": "Mar",
-                "value": 0
-            }
-        ]
+      "name": "Prediction",
+      "series": [
+        {
+          "name": "July",
+          "value": '100'
+        },
+        {
+          "name": "August",
+          "value": '200'
+        },
+        {
+          "name": "Sept",
+          "value": '0'
+        }
+      ]
     },
-];
+  ];
   constructor(private router: Router,
     private predictService: DataPredictService) {
-    this.dataStats = this.multi;
+    this.data_local = this.getLocalStorage()
+    this.getChartData()
     this.view = [innerWidth / 1.1, 220];
   }
 
   ngOnInit(): void {
-    this.data_local = this.getLocalStorage()
-    this.getChartData()
+
     this.getLastestData()
+
+  }
+
+  ngViewAfterInit() {
 
   }
 
@@ -81,9 +85,22 @@ export class HomeDashboardComponent implements OnInit {
   }
 
   getChartData() {
-    return this.predictService.getStatistic(this.data_local['user_id']).subscribe((res: any) => {
-      
+    this.predictService.getStatistic(this.data_local['user_id']).subscribe((res: any) => {
+      if (res.message == "Success") {
+ 
+        this.multi[0].series = res.data
+
+        console.log("this.multi", this.multi)
+      }
+
+      this.multi = [...this.multi];
+    }
+    
+    ,(err) =>{
+
     })
+
+    // console.log("boom", this.multi[0])
   }
 
   logicBulan(harvest_date: any) {
@@ -95,7 +112,6 @@ export class HomeDashboardComponent implements OnInit {
       if (res.message == "Success") {
         this.data_predict = res.data
         console.log("boom =>", this.data_predict)
-
       } else {
         this.data_predict = null;
       }

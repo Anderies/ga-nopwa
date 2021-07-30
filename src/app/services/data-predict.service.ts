@@ -21,6 +21,7 @@ export class DataPredictService {
     return { sunny, cloudy, rain };
   }
 
+
   getHistoryList(uid: any) {
     return this.http.get(`https://mustseeum.com/henshuai/API/history/get_list?uid=${uid}`)
   }
@@ -31,7 +32,7 @@ export class DataPredictService {
 
   getLatestPrediction(uid: any) {
     return this.http.get(`https://mustseeum.com/henshuai/API/user/get_last_harvest?uid=${uid}`)
-    
+
   }
 
   getPredictionList(uid: any) {
@@ -42,8 +43,8 @@ export class DataPredictService {
     return this.http.get(`https://mustseeum.com/henshuai/API/prediction/get_detail?pid=${pid}`)
   }
 
-  getStatistic(uid:any){
-    return this.http.get(`https://mustseeum.com/henshuai/API/user/get_harvest_statistic?uid=${uid}`)
+  getStatistic(uid: any) {
+    return this.http.get(`https://mustseeum.com/henshuai/API/user/get_harvest_statistic?uid=${uid}&y=2021`)
   }
 
 

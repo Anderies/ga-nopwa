@@ -1,9 +1,9 @@
 <app-top-bar></app-top-bar>
 <div class="d-flex flex-column card-stats" style="margin-top: 5%;margin-left: 4%;margin-right: 4%;">
     <p class="txt-title-chart">Your Statistic</p>
-    <p class="txt-null-chart align-self-center">Add History to see your income chart</p>
+    <!-- <p class="txt-null-chart align-self-center" *ngIf="test">Add History to see your income chart</p> -->
     <ngx-charts-area-chart-stacked  [scheme]="colorScheme" [xAxis]="xAxis" [yAxis]="yAxis" [view]="view" [curve]="curve"
-        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="dataStats"
+        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="multi"
         [showGridLines]="false"
         style="margin-bottom: -15%;">
     </ngx-charts-area-chart-stacked>

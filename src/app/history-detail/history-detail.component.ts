@@ -17,7 +17,7 @@ export class HistoryDetailComponent implements OnInit {
     this.hId = this.route.snapshot.paramMap.get('id')
     console.log(this.hId)
     this.predictService.getHistoryDetail(this.hId).subscribe((res: any) => {
-
+      
       this.data_history = res.data['history']
       console.log(this.data_history)
     })

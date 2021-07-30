@@ -85,14 +85,11 @@ export class InputRealizationComponent implements OnInit {
   submit() {
     let formattedDate = this.formatDate(this.date)
     // this.router.navigate([`/history/${data}`])
-    this.predictService.createHistory(this.b['user_id'], this.harvest_result_qty,
-      this.prediction_id, this.harvest_result_price, this.pesticide_used, this.fertizilier_used, this.labor_worked, formattedDate).subscribe((res: any) => {
-        console.log("res", res)
+    this.predictService.createHistory(this.b['user_id'], this.prediction_id, this.harvest_result_qty,
+      this.harvest_result_price, this.pesticide_used, this.fertizilier_used, this.labor_worked, formattedDate).subscribe((res: any) => {
+        console.log("res", res.data.history.history_id)
+        this.router.navigate([`history/${res.data.history.history_id}`])
       })
-
-    this.router.navigate(['history-dashboard']).then(() => {
-      window.location.reload();
-    })
   }
 
   navigatetoSearchPrediction() {

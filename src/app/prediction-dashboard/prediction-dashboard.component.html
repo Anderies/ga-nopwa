@@ -47,7 +47,7 @@
     </mat-form-field>
 
     <div *ngFor="let data of data_predict | filter:term">
-        <div class="card-stats" style="margin: 2% 5%;" (click)="getDetailPrediction(data.prediction_id)">
+        <div class="card-stats" style="margin: 3% 5%;" (click)="getDetailPrediction(data.prediction_id)">
             <div class="d-flex flex-row">
                 <div class="d-flex flex-column align-items-center">
                     <p class="txt-value">{{data.prediction_date | slice:0:2}}</p>
