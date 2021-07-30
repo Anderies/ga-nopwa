@@ -1,0 +1,42 @@
+.txt-generate {
+    color: #134f5c;
+    font-family: roboto-bold;
+    font-size: 20px;
+}
+
+p{
+    margin-bottom: 0;
+    
+}
+.example-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    // margin-left: 10%;
+    margin-right: 10%;
+}
+
+// ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+//     padding: 0 !important;
+// }
+
+.global-color {
+    background-color: #92aa99;
+}
+
+.button {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    p{
+        margin-top: auto;
+        margin-bottom: auto;
+        color: #FAFAFA;
+    }
+    
+}

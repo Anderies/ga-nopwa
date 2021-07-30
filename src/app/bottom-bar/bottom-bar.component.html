@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-evenly mt-4 bottom-bar">
+    <!-- HOME BAR -->
+    <div  (click)=toogle() *ngIf="!home" class="d-flex flex-column">
+        <img src="../../assets/Icon awesome-home-unactive.svg" class="align-self-center">
+        <p>Home</p>
+    </div>
+
+    <div  (click)=toogle() *ngIf="home" class="d-flex flex-column">
+        <img src="../../assets/Icon awesome-home.svg" class="align-self-center">
+        <p class="txt-active">Home</p>
+    </div>
+    <!-- PREDICTION BAR -->
+
+    <div class="d-flex flex-column" *ngIf="!prediction" (click)="tooglePrediction()">
+        <img src="../../assets/Icon ionic-ios-stats-unactive.svg" class="align-self-center">
+        <p>Prediction</p>
+    </div>
+
+    <div class="d-flex flex-column" *ngIf="prediction" (click)="tooglePrediction()">
+        <img src="../../assets/Icon ionic-ios-stats.svg" class="align-self-center">
+        <p class="txt-active">Prediction</p>
+    </div>
+
+    <!-- HISTORY BAR -->
+    <div class="d-flex flex-column" *ngIf="!history" (click)="toogleHistory()">
+        <img src="../../assets/Icon awesome-history-unactive.svg" class="align-self-center">
+        <p>History</p>
+    </div>
+
+    <div class="d-flex flex-column" *ngIf="history" (click)="toogleHistory()">
+        <img src="../../assets/Icon awesome-history.svg" class="align-self-center">
+        <p class="txt-active">History</p>
+    </div>
+
+    <!-- PROFILE BAR -->
+
+    <div class="d-flex flex-column" *ngIf="!profile" (click)="toogleProfile()">
+        <img src="../../assets/Icon material-person-unactive.svg" class="align-self-center">
+        <p>Profile</p>
+    </div>
+
+    <div class="d-flex flex-column" *ngIf="profile" (click)="toogleProfile()">
+        <img src="../../assets/Icon material-person.svg" class="align-self-center">
+        <p class="txt-active">Profile</p>
+    </div>
+</div>

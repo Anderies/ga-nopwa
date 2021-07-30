@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "roboto";
+    src: url("./assets/fonts/Roboto-Regular.ttf") format("opentype");
+}
+
+@font-face {
+    font-family: "roboto-bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf") format("opentype");
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.txt-generate {
+    color: #134f5c;
+    font-family: roboto-bold;
+    font-size: 20px;
+}
+
+.line-pembatas {
+    border: 0.5px solid gray;
+    margin: 0 4%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.txt-key {
+    color: #58595d;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.txt-value {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 14px;
+}
+
+.text-error {
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5% !important;
+}

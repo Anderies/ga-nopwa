@@ -1,0 +1,86 @@
+<app-top-bar></app-top-bar>
+<div *ngIf="data_predict == null" class="d-flex flex-column justify-content-center" style="margin:10% 5%;">
+    <img src="../../assets/null_pred.svg">
+    <p class="text-intro">Seems like you haven't input any<br>
+        realization yet. Go to your prediction and <br>
+        enter realization to view your history</p>
+
+    <button mat-raised-button color="primary" class="button">
+        <p class="text" (click)="generatePredict()">Generate Prediction</p>
+    </button>
+</div>
+
+
+<div *ngIf="data_predict">
+    <div class="card-stats" style="margin: 5% 5%;">
+        <div class="d-flex flex-column">
+            <p class="txt-header">Your Upcoming Harvest Prediction</p>
+
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 8%;">
+                <p class="txt-key">Global Harvest Result Estimation</p>
+                <p class="txt-value">$13,250</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Your Harvest Result Estimation</p>
+                <p class="txt-value">$10,945</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Your Harvest Result Estimation</p>
+                <p class="txt-value">5234Kg</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Price Estimation / Kg</p>
+                <p class="txt-value">$2.00</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="margin: 5% 5%;">
+        <p class="txt-header">Or See Your Past Prediction Result</p>
+    </div>
+
+    <mat-form-field appearance="outline" style="width: 90%;margin: 0 5%" >
+        <mat-label>Search your prediction</mat-label>
+        <input matInput placeholder="Search your prediction" [(ngModel)]="term">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <div *ngFor="let data of data_predict | filter:term">
+        <div class="card-stats" style="margin: 2% 5%;" (click)="getDetailPrediction(data.prediction_id)">
+            <div class="d-flex flex-row">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="txt-value">{{data.prediction_date | slice:0:2}}</p>
+                    <p class="txt-key">{{data.prediction_date | slice:3:5}}</p>
+                </div>
+                <div class="line-pembatas">
+
+                </div>
+                <div class="d-flex flex-column fg">
+                    <p class="txt-key">Global Harvest Result</p>
+                    <p class="txt-key">Estimation</p>
+                </div>
+                <div class="align-self-center">
+                    <p class="txt-value">${{data.global_harvest}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 105px;">
+
+    </div>
+
+
+    <button mat-fab color="primary" class="button-add" aria-label="Example icon button with a menu icon"
+        style="background-color:#134F5C" (click)="generatePredict()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+
+
+
+
+
+<app-bottom-bar [predictionMenu]="predictionMenuSend"></app-bottom-bar>

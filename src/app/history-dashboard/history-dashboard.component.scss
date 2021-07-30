@@ -1,0 +1,94 @@
+// NOT NULL STATE
+.side-bar {
+    color: #92aa99;
+    background-color: #92aa99;
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.card-stats {
+    width: auto;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    padding: 3% 3%;
+}
+
+.txt-header {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 16px;
+}
+
+.txt-key {
+    color: #58595d;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.fg {
+    flex-grow: 4;
+}
+
+.txt-value {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 14px;
+}
+
+
+.line-pembatas {
+    border: 0.5px solid gray;
+    margin: 0 4%;
+}
+
+.button-add {
+    position: fixed;
+    right: 3%;
+    bottom: 10%;
+    z-index: 1000;
+}
+
+// END NOT NULL STATE
+
+
+.txt-intro{
+    font-family: roboto;
+    font-size: 16px;
+    color: #58595D;
+    text-align: center;
+    margin-top: 14%;
+    margin-bottom: 5%;
+}
+
+.section-history{
+    margin-top: 12%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.button {
+    padding: 3%;
+    p{
+        font-size: 18px;
+        font-family: roboto;
+    }
+}
+
+.global-color{
+    background-color: #92AA99;
+}
+
+.second-color {
+    background-color: #FAFAFA;
+    border: 1px solid #92AA99;
+    p {
+        color: #7C7D7E;
+    }
+}

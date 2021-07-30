@@ -1,0 +1,86 @@
+.button {
+    width: 100%;
+    height: 45px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7.5% 0;
+    border-radius: 7px;
+    background-color: #92AA99;
+    p{
+        color: #FAFAFA;
+        font-size: 18px;
+        font-family: roboto-bold;
+    }
+    
+}
+
+::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0;
+}
+
+
+.card-stats {
+    width: auto;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    padding: 3% 3%;
+}
+
+.text-intro{
+    text-align: center;
+    font-size: 16px;
+    font-family: roboto;
+    color: #58595D;
+    margin-top: 10%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.line-pembatas {
+    border: 0.5px solid gray;
+    margin: 0 4%;
+}
+
+.fg {
+    flex-grow: 4;
+}
+
+
+
+.button-add {
+    position: fixed;
+    right: 3%;
+    bottom: 10%;
+    z-index: 1000;
+}
+
+.txt-key {
+    color: #58595d;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.txt-value {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 14px;
+}
+
+.txt-header {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 16px;
+}
+
+
+
+.txt-link {
+    color: #147ad6;
+    font-family: roboto-bold;
+    font-size: 14px;
+}

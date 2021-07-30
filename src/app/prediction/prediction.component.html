@@ -1,0 +1,33 @@
+<div class="d-flex flex-column" style="margin-top: 10%;margin-left: 10%;">
+    <div class="d-flex flex-row" style="margin-bottom: 5%;" (click)="back()">
+        <mat-icon class="align-self-center" style="margin-right: 4%;">arrow_back</mat-icon>
+        <p class="txt-generate">Generate Prediction</p>
+    </div>
+
+
+    <div class="example-container">
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="date" required>
+            <mat-datepicker-toggle matSuffix [for]="picker" style="font-size: 32px;"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Farm Area (meter)" type="number" [(ngModel)]="farm_meter" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Crop Category</mat-label>
+            <mat-select ngModel (ngModelChange)="onCountryChanged($event)" required>
+                <mat-option *ngFor="let food of crops" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="global-color button" style="margin-top: 30px;"
+            [disabled]="farm_meter == null || date == null" (click)="showPredict()">
+            <p class="text-submit">Generate Now</p>
+        </button>
+    </div>
+</div>
+<!-- <app-bottom-bar [childMessage]="parentMessage"></app-bottom-bar> -->

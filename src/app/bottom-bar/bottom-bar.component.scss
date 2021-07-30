@@ -1,0 +1,23 @@
+.bottom-bar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #92aa99;
+    border-right: 1px solid #92aa99;
+    border-left: 1px solid #92aa99;
+    padding: 3% 0;
+    z-index:999;
+    background-color: white;
+}
+
+
+p{
+    margin-bottom: 0;
+}
+
+.txt-active {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 18px;
+}

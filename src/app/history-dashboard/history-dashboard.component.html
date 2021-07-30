@@ -1,0 +1,59 @@
+<!-- <p>history-dashboard works!</p> -->
+<!-- ITEM PREDICTION -->
+<app-top-bar></app-top-bar>
+<div  *ngIf="data_history !== null">
+    <div style="margin: 5% 5%;">
+        <p class="txt-header">Your Past Harvest Result</p>
+    </div>
+
+    <div *ngFor="let data of data_history">
+        <div class="card-stats" style="margin: 4% 5%;" (click)="gotoDetail(data.history_id)">
+            <div class="d-flex flex-row">
+                <div class="d-flex flex-column align-items-center">
+                    <p class="txt-value">{{data.harvest_date | slice:0:2}}</p>
+                    <p class="txt-key">{{data.harvest_date | slice:3:5}}</p>
+                </div>
+                <div class="line-pembatas">
+    
+                </div>
+                <div class="d-flex flex-column fg">
+                    <p class="txt-key">Global Harvest Result</p>
+                    <p class="txt-key">Estimation</p>
+                </div>
+                <div class="align-self-center">
+                    <p class="txt-value">$ {{data.harvest_result_price}}</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <button mat-fab color="primary" class="button-add" aria-label="Example icon button with a menu icon"
+        style="background-color:#134F5C" (click)="addHistory()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<!-- HISTORY NULL STATE -->
+<div class="d-flex flex-column section-history" *ngIf="data_history == null">
+    <img src="../../assets/icon_history_null_state.svg">
+
+    <p class="txt-intro">Seems like you haven't input any<br>
+        realization yet. Go to your prediction<br>
+        enter realization to view your history
+    </p>
+
+    <div class="d-flex flex-column">
+        <button mat-raised-button color="primary" class="global-color button">
+            <p class="" (click)="gotoPrediction()">Go to my Prediction</p>
+        </button>
+
+        <button mat-raised-button color="primary" class="second-color button" style="margin-top: 25px;">
+            <p class="" (click)="addHistory()">Add New History</p>
+        </button>
+    </div>
+
+</div>
+<div style="height: 100px;">
+    
+</div>
+<app-bottom-bar [historyMenu]="historyMenuSend"></app-bottom-bar>

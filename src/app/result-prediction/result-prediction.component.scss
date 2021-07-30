@@ -1,0 +1,77 @@
+.txt-generate {
+    color: #134f5c;
+    font-family: roboto-bold;
+    font-size: 20px;
+}
+
+.txt-weather{
+    color: black;
+    font-family: roboto-bold;
+    margin-right: 5%;
+}
+
+.box-sunny{
+    width: 50px;
+    height: 50px;
+    margin: 2% 3%;
+    border: 5px solid #F6D322;
+    .txt-sunny{
+        color: #7C828A;
+        font-family: roboto;
+        font-size: 14px;
+    }
+}
+
+
+
+.chart-wrapper{
+    display: flex; 
+    // overflow: hidden;
+}
+.txt-freq{
+    color: #7C828A;
+    font-family: roboto;
+}
+
+
+p{
+    margin-bottom: 0;
+    
+}
+
+
+// BAR BAWAH
+.card-stats {
+    width: auto;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    padding: 3% 3%;
+}
+
+.card-stats-two {
+    width: auto;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    padding: 5% 3%;
+}
+.txt-key {
+    color: #58595d;
+    font-family: roboto;
+    font-size: 14px;
+}
+
+.txt-value {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 14px;
+}
+
+.txt-header {
+    font-family: roboto-bold;
+    color: #134f5c;
+    font-size: 16px;
+}
+
+.txt-link {
+    color: #147ad6;
+    font-family: roboto-bold;
+    font-size: 14px;
+}
