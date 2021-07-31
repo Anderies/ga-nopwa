@@ -59,6 +59,8 @@ export class HomeDashboardComponent implements OnInit {
       ]
     },
   ];
+
+  isLoading: boolean = true;
   constructor(private router: Router,
     private predictService: DataPredictService) {
     this.data_local = this.getLocalStorage()
@@ -67,15 +69,14 @@ export class HomeDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.isLoading = true
     this.getLastestData()
-
+    this.isLoading = false
   }
 
   ngViewAfterInit() {
 
   }
-
 
   getLocalStorage() {
     let b: any;

@@ -1,48 +1,50 @@
-<app-top-bar></app-top-bar>
-<div class="d-flex flex-column" style="margin: 5% 5%;">
-    <div class="d-flex flex-row" style="margin-bottom: 5%;" (click)="back()">
-        <mat-icon class="align-self-center" style="margin-right: 4%;">arrow_back</mat-icon>
-        <p class="txt-generate">Your Prediction</p>
-    </div>
-</div>
-<div class="card-stats" style="margin: 5% 5%;">
-    <div class="d-flex flex-column">
-        <p class="txt-header">Your Upcoming Harvest Prediction</p>
-
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 5%;">
-            <p class="txt-key">Global Harvest Result Estimation</p>
-            <p class="txt-value">$ {{data_pred?.global_harvest}}</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
-            <p class="txt-key">Your Harvest Result Estimation</p>
-            <p class="txt-value">$ {{data_pred?.personal_harvest}}</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
-            <p class="txt-key">Your Harvest Result Estimation</p>
-            <p class="txt-value">{{data_pred?.harvest_result}} Kg</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
-            <p class="txt-key">Price Estimation / Kg</p>
-            <p class="txt-value">$ {{data_pred?.price_estimation}}</p>
+<div class="animasi">
+    <app-top-bar></app-top-bar>
+    <div class="d-flex flex-column" style="margin: 5% 5%;">
+        <div class="d-flex flex-row" style="margin-bottom: 5%;" (click)="back()">
+            <mat-icon class="align-self-center" style="margin-right: 4%;">arrow_back</mat-icon>
+            <p class="txt-generate">Your Prediction</p>
         </div>
     </div>
-</div>
-
-<div class="card-stats-two" style="margin: 5% 5%;">
-    <div class="d-flex flex-column">
-        <p class="txt-header">Our Recommendation</p>
-
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 5%;">
-            <p class="txt-key">Pesticide Usage</p>
-            <p class="txt-value">{{data_recommendation?.pesticide}} Ltr</p>
+    <div class="card-stats" style="margin: 5% 5%;">
+        <div class="d-flex flex-column">
+            <p class="txt-header">Your Upcoming Harvest Prediction</p>
+    
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 5%;">
+                <p class="txt-key">Global Harvest Result Estimation</p>
+                <p class="txt-value">$ {{data_pred?.global_harvest}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Your Harvest Result Estimation</p>
+                <p class="txt-value">$ {{data_pred?.personal_harvest}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Your Harvest Result Estimation</p>
+                <p class="txt-value">{{data_pred?.harvest_result}} Kg</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Price Estimation / Kg</p>
+                <p class="txt-value">$ {{data_pred?.price_estimation}}</p>
+            </div>
         </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
-            <p class="txt-key">Fertilizer Usage</p>
-            <p class="txt-value">{{data_recommendation?.fertilizer}} Kg</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
-            <p class="txt-key">Labors</p>
-            <p class="txt-value">{{data_recommendation?.labor}} Persons</p>
+    </div>
+    
+    <div class="card-stats-two" style="margin: 5% 5%;">
+        <div class="d-flex flex-column">
+            <p class="txt-header">Our Recommendation</p>
+    
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 5%;">
+                <p class="txt-key">Pesticide Usage</p>
+                <p class="txt-value">{{data_recommendation?.pesticide}} Ltr</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Fertilizer Usage</p>
+                <p class="txt-value">{{data_recommendation?.fertilizer}} Kg</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 2%;">
+                <p class="txt-key">Labors</p>
+                <p class="txt-value">{{data_recommendation?.labor}} Persons</p>
+            </div>
         </div>
     </div>
 </div>

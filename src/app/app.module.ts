@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PredictionDetailComponent } from './prediction-detail/prediction-detail.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +66,8 @@ import { PredictionDetailComponent } from './prediction-detail/prediction-detail
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     Ng2SearchPipeModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

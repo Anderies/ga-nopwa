@@ -1,25 +1,14 @@
 <!-- <h1>Hello World</h1> -->
-<div *ngIf="isDesktop" class="d-flex justify-content-center">
-    <h1 style="text-align: center;margin-top: 45vh;"> ^.^ <br>
-        Please Open in Mobile</h1>
-</div>
-<div *ngIf="isMobile">
-    <router-outlet></router-outlet>
+<div *ngIf="showOverlay">
+    <mat-spinner></mat-spinner>
 </div>
 
-<script>
-    $(document).ready(function () {
-        var ua = navigator.userAgent;
-
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua))
-            alert("check android")
-
-        else if (/Chrome/i.test(ua))
-            // $('a.chrome').show();
-            alert("chrome")
-
-        else
-            $('a.desktop-other').show();
-            alert("other")
-    });
-</script>
+<div *ngIf="!showOverlay">
+    <div *ngIf="isDesktop" class="d-flex justify-content-center">
+        <h1 style="text-align: center;margin-top: 45vh;"> ^.^ <br>
+            Please Open in Mobile</h1>
+    </div>
+    <div *ngIf="isMobile">
+        <router-outlet></router-outlet>
+    </div>
+</div>

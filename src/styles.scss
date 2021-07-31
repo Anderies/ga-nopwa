@@ -5,6 +5,12 @@
 }
 
 @font-face {
+    font-family: "roboto-med";
+    src: url("./assets/fonts/Roboto-Medium.ttf") format("opentype");
+}
+
+
+@font-face {
     font-family: "roboto-bold";
     src: url("./assets/fonts/Roboto-Bold.ttf") format("opentype");
 }
@@ -49,4 +55,39 @@ p {
     font-size: 12px;
     text-align: center;
     margin-bottom: 5% !important;
+}
+
+.animasi {
+    animation-duration: 1s;
+    animation-name: slide-in-fwd-center;
+}
+
+.slide-in-fwd-center {
+    -webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-fwd-center {
+    0% {
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-fwd-center {
+    0% {
+        -webkit-transform: translateZ(-1400px);
+        transform: translateZ(-1400px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
 }

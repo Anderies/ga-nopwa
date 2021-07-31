@@ -1,12 +1,13 @@
-<app-top-bar></app-top-bar>
-<div class="d-flex" style="margin: 5% 7%;">
-    <img class="img-profile" src="../../assets/milim-nava.jpg">
-    <div class="d-flex flex-column align-self-center justify-content-between" style="margin-left: 5%;">
-        <p class="txt-username">{{local_data.user_name}}</p>
-        <p class="txt-email">{{local_data.user_email}}</p>
-        <p style="color: red;" (click)="logout()">Logout</p>
+<div class="animasi">
+    <app-top-bar></app-top-bar>
+    <div class="d-flex" style="margin: 5% 7%;">
+        <img class="img-profile" src="../../assets/milim-nava.jpg">
+        <div class="d-flex flex-column align-self-center justify-content-between" style="margin-left: 5%;">
+            <p class="txt-username">{{local_data.user_name}}</p>
+            <p class="txt-email">{{local_data.user_email}}</p>
+            <p style="color: red;" (click)="logout()">Logout</p>
+        </div>
+       
     </div>
-   
+    <app-bottom-bar [profileMenu]=profileMenuSend></app-bottom-bar>
 </div>
-
-<app-bottom-bar [profileMenu]=profileMenuSend></app-bottom-bar>

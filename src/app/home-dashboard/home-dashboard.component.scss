@@ -3,8 +3,6 @@ p {
     font-family: roboto;
 }
 
-
-
 .txt-title-chart {
     color: #134f5c;
     font-family: roboto-bold;
@@ -18,7 +16,7 @@ p {
     margin: 2%;
 }
 
-.section-weather-margin{
+.section-weather-margin {
     margin-top: 5%;
     margin-left: 8%;
     margin-right: 8%;
@@ -29,20 +27,20 @@ p {
     font-family: roboto-bold;
 }
 
-.txt-key{
-    color: #58595D;
+.txt-key {
+    color: #58595d;
     font-family: roboto;
     font-size: 14px;
 }
 
-.txt-value{
-    color: #134F5C;
+.txt-value {
+    color: #134f5c;
     font-family: roboto-bold;
     font-size: 14px;
 }
 
-.txt-link{
-    color: #147AD6;
+.txt-link {
+    color: #147ad6;
     font-family: roboto;
     font-size: 14px;
 }
@@ -63,7 +61,7 @@ img {
     margin-right: auto;
 }
 
-.card-stats{
+.card-stats {
     width: auto;
     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
@@ -75,7 +73,6 @@ img {
     border-radius: 20px;
     margin-right: 2%;
     flex: 0 0 auto;
-   
 }
 .parent-slider {
     display: flex;
@@ -97,3 +94,4 @@ img {
 .w-100 {
     width: 100%;
 }
+

@@ -4,41 +4,36 @@
     font-size: 20px;
 }
 
-.txt-weather{
+.txt-weather {
     color: black;
     font-family: roboto-bold;
     margin-right: 5%;
 }
 
-.box-sunny{
+.box-sunny {
     width: 50px;
     height: 50px;
     margin: 2% 3%;
-    border: 5px solid #F6D322;
-    .txt-sunny{
-        color: #7C828A;
+    border: 5px solid #f6d322;
+    .txt-sunny {
+        color: #7c828a;
         font-family: roboto;
         font-size: 14px;
     }
 }
 
-
-
-.chart-wrapper{
-    display: flex; 
+.chart-wrapper {
+    display: flex;
     // overflow: hidden;
 }
-.txt-freq{
-    color: #7C828A;
+.txt-freq {
+    color: #7c828a;
     font-family: roboto;
 }
 
-
-p{
+p {
     margin-bottom: 0;
-    
 }
-
 
 // BAR BAWAH
 .card-stats {
@@ -74,4 +69,103 @@ p{
     color: #147ad6;
     font-family: roboto-bold;
     font-size: 14px;
+}
+
+.img-wait {
+    width: 50%;
+    margin: 5% 25%;
+}
+
+
+.loader {
+    width: 16em;
+    height: 8em;
+    position: relative;
+    overflow: hidden;
+    margin: 10% auto;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+
+.loader::before {
+    width: inherit;
+    height: 0.2em;
+    background-color: hsla(0, 0%, 85%);
+}
+
+.loader::after {
+    box-sizing: border-box;
+    width: 50%;
+    height: inherit;
+    border: 0.2em solid hsla(0, 0%, 85%);
+    border-radius: 50%;
+    left: 25%;
+}
+
+.loader span {
+    position: absolute;
+    width: 5%;
+    height: 10%;
+    background-color: #134F5C;
+    border-radius: 50%;
+    bottom: 0.2em;
+    left: -5%;
+    animation: 2s linear infinite;
+    transform-origin: 50% -3em;
+    animation-name: run, rotating;
+}
+
+.loader span:nth-child(2) {animation-delay: 0.075s;}
+.loader span:nth-child(3) {animation-delay: 0.15s;}
+
+@keyframes run {
+    0% {left: -5%;}
+    10%, 60% {left: calc((100% - 5%) / 2);}
+    70%, 100% {left: 100%;}
+}
+
+@keyframes rotating {
+    0%, 10% {transform: rotate(0deg);}
+    60%, 100% {transform: rotate(-1turn);}
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter p {
+    text-align: center;
+    margin-top: 10%;
+    font-family: monospace;
+    font-size: 16px;
+    color: #134F5C;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.05em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.02em; /* Adjust as needed */
+    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #134F5C;
+    }
 }

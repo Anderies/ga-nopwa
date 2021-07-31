@@ -1,72 +1,72 @@
-<app-top-bar></app-top-bar>
-<div class="d-flex flex-column card-stats" style="margin-top: 5%;margin-left: 4%;margin-right: 4%;">
-    <p class="txt-title-chart">Your Statistic</p>
-    <!-- <p class="txt-null-chart align-self-center" *ngIf="test">Add History to see your income chart</p> -->
-    <ngx-charts-area-chart-stacked  [scheme]="colorScheme" [xAxis]="xAxis" [yAxis]="yAxis" [view]="view" [curve]="curve"
-        [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="multi"
-        [showGridLines]="false"
-        style="margin-bottom: -15%;">
-    </ngx-charts-area-chart-stacked>
-</div>
-<div class="d-flex flex-column section-weather-margin">
-    <p class="txt-title-weather">Weather Forecast</p>
-    <div class="parent-slider">
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Sun</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-sun.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
-        </div>
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Mon</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
-        </div>
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Tue</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-cloud-sun.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
-        </div>
+<div class="animasi">
+    <app-top-bar></app-top-bar>
+    <div class="d-flex flex-column card-stats" style="margin-top: 5%;margin-left: 4%;margin-right: 4%;">
+        <p class="txt-title-chart">Your Statistic</p>
+        <ngx-charts-area-chart-stacked [scheme]="colorScheme" [xAxis]="xAxis" [yAxis]="yAxis" [view]="view"
+            [curve]="curve" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [timeline]="timeline" [results]="multi"
+            [showGridLines]="false" style="margin-bottom: -15%;">
+        </ngx-charts-area-chart-stacked>
+    </div>
+    <div class="d-flex flex-column section-weather-margin">
+        <p class="txt-title-weather">Weather Forecast</p>
+        <div class="parent-slider">
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Sun</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-sun.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Mon</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Tue</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-cloud-sun.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
 
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Wed</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
-        </div>
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Wed</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
 
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Tue</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-cloud-sun.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
-        </div>
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Tue</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-cloud-sun.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
 
-        <div class="card-weather d-flex flex-column justify-content-evenly">
-            <p class="txt-card-day">Wed</p>
-            <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
-            <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            <div class="card-weather d-flex flex-column justify-content-evenly">
+                <p class="txt-card-day">Wed</p>
+                <img class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg" width="35">
+                <p class="txt-card-celcius">32<span>&#8451;</span></p>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="section-weather-margin" *ngIf="data_predict">
-    <p class="txt-title-weather" style="margin-bottom: 4%;">Latest Harvest Result</p>
-    <div class="d-flex flex-column justify-content-evenly">
-        <div class="d-flex flex-row justify-content-between" style="margin-bottom: 3%;">
-            <p class="txt-key">Date Harvest</p>
-            <p class="txt-value">{{data_predict?.harvest_date}}</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-bottom: 3%;">
-            <p class="txt-key">Crop Result (kg)</p>
-            <p class="txt-value">{{data_predict?.harvest_result_qty}}</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-bottom: 4%;">
-            <p class="txt-key">Crop Result ($)</p>
-            <p class="txt-value">{{data_predict?.harvest_result_price}}</p>
-        </div>
-        <div class="d-flex flex-row justify-content-between" style="margin-bottom: 35%;">
-            <p class="txt-key"></p>
-            <p class="txt-link" (click)="gotoHisDetail(data_predict?.history_id)">Show Detail</p>
-        </div>
+    <div class="section-weather-margin" *ngIf="data_predict">
+        <p class="txt-title-weather" style="margin-bottom: 4%;">Latest Harvest Result</p>
+        <div class="d-flex flex-column justify-content-evenly">
+            <div class="d-flex flex-row justify-content-between" style="margin-bottom: 3%;">
+                <p class="txt-key">Date Harvest</p>
+                <p class="txt-value">{{data_predict?.harvest_date}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-bottom: 3%;">
+                <p class="txt-key">Crop Result (kg)</p>
+                <p class="txt-value">{{data_predict?.harvest_result_qty}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-bottom: 4%;">
+                <p class="txt-key">Crop Result ($)</p>
+                <p class="txt-value">$ {{data_predict?.harvest_result_price}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-between" style="margin-bottom: 35%;">
+                <p class="txt-key"></p>
+                <p class="txt-link" (click)="gotoHisDetail(data_predict?.history_id)">Show Detail</p>
+            </div>
 
+        </div>
     </div>
+    <app-bottom-bar [homeMenu]="homeMenuSend"></app-bottom-bar>
 </div>
-<app-bottom-bar [homeMenu]="homeMenuSend"></app-bottom-bar>

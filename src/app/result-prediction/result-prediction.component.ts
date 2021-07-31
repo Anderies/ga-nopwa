@@ -43,7 +43,9 @@ export class ResultPredictionComponent implements OnInit {
   };
   data_pred: any;
 
-  fromDetail:boolean = false;
+  fromDetail: boolean = false;
+
+  isLoading: boolean = true;
   constructor(private router: Router, private location: Location, private predictService: DataPredictService) { }
 
   ngOnInit(): void {
@@ -54,10 +56,12 @@ export class ResultPredictionComponent implements OnInit {
     this.fillPredData()
 
 
-    if(this.data_pred == null){
+    if (this.data_pred == null) {
       this.router.navigate(['prediction-dashboard'])
     }
     this.data_recommendation = history.state.rec
+
+    setInterval(() => { this.isLoading = false; }, 1500);
   }
 
   fillPredData() {
@@ -65,7 +69,7 @@ export class ResultPredictionComponent implements OnInit {
     this.data_pred = hisPred
   }
 
- 
+
 
   getWeather() {
     this.weather = this.predictService.getWeather(180);

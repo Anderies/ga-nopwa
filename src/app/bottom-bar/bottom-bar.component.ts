@@ -64,7 +64,7 @@ export class BottomBarComponent implements OnInit {
     // this.home = true
     // this.router.navigate('/prediction');
     this.router.navigate(['/home']).then(() => {
-      // window.location.reload();
+      window.location.reload();
 
     });
 
