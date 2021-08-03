@@ -60,6 +60,10 @@ export class HomeDashboardComponent implements OnInit {
     },
   ];
 
+
+  weatherlocation: any;
+  weatherinfo: any;
+
   isLoading: boolean = true;
   constructor(private router: Router,
     private predictService: DataPredictService) {
@@ -70,12 +74,35 @@ export class HomeDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true
+    this.getLocation()
     this.getLastestData()
     this.isLoading = false
   }
 
   ngViewAfterInit() {
 
+  }
+
+  getLocation() {
+    this.predictService.getPosition().then(pos => {
+      console.log(`Positon: ${pos.lng} ${pos.lat}`);
+      if (pos.lng == null && pos.lat == null) {
+        pos.lng = 106.7860784
+        pos.lat = -6.200212400000001
+        console.log("can't get location")
+      }
+      this.predictService.getHomeWeatherForecast(this.data_local['user_id'], pos.lat, pos.lng).subscribe((res: any) => {
+        if (res.message == "Success") {
+          this.weatherlocation = res.data.timezone
+          this.weatherinfo = res.data.weather
+          console.log("weatherlocation", this.weatherlocation)
+          console.log("weatherinfo", this.weatherinfo)
+        } else {
+          this.weatherlocation = "Jakarta"
+          this.weatherinfo = null
+        }
+      })
+    });
   }
 
   getLocalStorage() {
@@ -88,7 +115,7 @@ export class HomeDashboardComponent implements OnInit {
   getChartData() {
     this.predictService.getStatistic(this.data_local['user_id']).subscribe((res: any) => {
       if (res.message == "Success") {
- 
+
         this.multi[0].series = res.data
 
         console.log("this.multi", this.multi)
@@ -96,10 +123,10 @@ export class HomeDashboardComponent implements OnInit {
 
       this.multi = [...this.multi];
     }
-    
-    ,(err) =>{
 
-    })
+      , (err) => {
+
+      })
 
     // console.log("boom", this.multi[0])
   }

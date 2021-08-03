@@ -23,32 +23,32 @@
             <div class="chart-wrapper box-sunny justify-content-center">
                 <!-- <ngx-charts-pie-chart [view]="[100,100]" [scheme]="colorScheme" [results]="single" [doughnut]="isDoughnut" style="padding: 0;">
                 </ngx-charts-pie-chart> -->
-                <p class="align-self-center txt-sunny">{{108 / 180 *100 }}%</p>
+                <p class="align-self-center txt-sunny">{{ weather?.sunny_percentage | number: '1.0-0'}}%</p>
             </div>
             <div class="d-flex flex-column" class="align-self-center">
                 <p class="txt-weather">Sunny&nbsp;&nbsp;<img src="../../assets/Icon awesome-sun.svg"></p>
-                <p class="txt-freq">108 out of 180 Days</p>
+                <p class="txt-freq">{{weather?.sunny_day}} out of 180 Days</p>
             </div>
         </div>
 
         <div class="d-flex flex-row" style="margin-top: 5%;">
             <div class="chart-wrapper box-sunny justify-content-center" style="border-color: #134F5C">
-                <p class="align-self-center txt-sunny">{{108 / 180 *100 }}%</p>
+                <p class="align-self-center txt-sunny">{{ weather?.cloudy_percentage | number: '1.0-0' }}%</p>
             </div>
             <div class="d-flex flex-column" class="align-self-center">
                 <p class="txt-weather">Cloudy&nbsp;&nbsp;<img src="../../assets/Icon awesome-cloud-sun.svg"></p>
-                <p class="txt-freq">45 out of 180 Days</p>
+                <p class="txt-freq">{{weather?.cloudy_day}} out of 180 Days</p>
             </div>
         </div>
 
         <div class="d-flex flex-row" style="margin-top: 5%;">
             <div class="chart-wrapper box-sunny justify-content-center" style="border-color: #147AD6">
-                <p class="align-self-center txt-sunny">{{108 / 180 *100 }}%</p>
+                <p class="align-self-center txt-sunny">{{ weather?.rainy_percentage | number: '1.0-0' }}%</p>
             </div>
             <div class="d-flex flex-column" class="align-self-center">
                 <p class="txt-weather">Rain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
                         src="../../assets/Icon awesome-cloud-rain.svg"></p>
-                <p class="txt-freq">45 out of 180 Days</p>
+                <p class="txt-freq">{{weather?.rainy_day}} out of 180 Days</p>
             </div>
         </div>
     </div>
@@ -79,8 +79,8 @@
     <div class="card-stats-two" style="margin: 5% 5%;">
         <div class="d-flex flex-column">
             <p class="txt-header">Our Recommendation</p>
-
-            <div class="d-flex flex-row justify-content-between" style="margin-top: 5%;">
+            <p class="txt-sub-header">Coming from expertise knoweldge and AI collaboration</p>
+            <div class="d-flex flex-row justify-content-between" style="margin-top: 3%;">
                 <p class="txt-key">Pesticide Usage</p>
                 <p class="txt-value">{{data_recommendation.pesticide}} Ltr</p>
             </div>

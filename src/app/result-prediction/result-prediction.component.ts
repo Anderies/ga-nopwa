@@ -50,8 +50,6 @@ export class ResultPredictionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeather()
-
-
     // from generate data
     this.fillPredData()
 
@@ -72,7 +70,8 @@ export class ResultPredictionComponent implements OnInit {
 
 
   getWeather() {
-    this.weather = this.predictService.getWeather(180);
+    this.weather = history.state.weather
+    console.log(this.weather)
   }
 
   back() {

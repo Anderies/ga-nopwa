@@ -23,14 +23,31 @@ export class PredictionComponent implements OnInit {
   parentMessage = true;
 
   local_data: any;
+  latGlob: any;
+  lonGlob: any;
   constructor(private route: Router, private predictService: DataPredictService) { }
 
   ngOnInit(): void {
+    this.getLocation()
     this.local_data = this.getLocalStorage()
   }
 
   back() {
     this.route.navigate(['/prediction-dashboard'])
+  }
+
+  getLocation() {
+    this.predictService.getPosition().then(pos => {
+      console.log(`Positon: ${pos.lng} ${pos.lat}`);
+      if (pos.lng == null && pos.lat == null) {
+        pos.lng = 106.7860784
+        pos.lat = -6.200212400000001
+        console.log("can't get location")
+      } else {
+        this.latGlob = pos.lat
+        this.lonGlob = pos.lng
+      }
+    });
   }
 
   getLocalStorage() {
@@ -60,10 +77,10 @@ export class PredictionComponent implements OnInit {
     // alert("terpencet")
     let formattedDate = this.formatDate(this.date)
     console.log(this.local_data['user_id'], formattedDate, this.farm_meter, this.corps_form)
-    this.predictService.createPrediction(this.local_data['user_id'], formattedDate, this.farm_meter, this.corps_form).subscribe((res: any) => {
+    this.predictService.createPrediction(this.local_data['user_id'], formattedDate, this.farm_meter, this.corps_form, this.latGlob, this.lonGlob).subscribe((res: any) => {
       console.log("res", res);
       if (res.message == "Success") {
-        this.route.navigate(['/result-prediction'], { state: { pred: res.data['prediction'], rec: res.data['recommendation'] } })
+        this.route.navigate(['/result-prediction'], { state: { pred: res.data['prediction'], rec: res.data['recommendation'], weather: res.data['weather'] } })
       } else {
         alert("there is something wrong")
       }

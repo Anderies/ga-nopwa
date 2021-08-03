@@ -11,6 +11,25 @@ export class DataPredictService {
 
   constructor(private http: HttpClient) { }
 
+  getPosition(): Promise<any> {
+    return new Promise((resolve, reject) => {
+
+      navigator.geolocation.getCurrentPosition(resp => {
+
+        resolve({ lng: resp.coords.longitude, lat: resp.coords.latitude });
+      },
+        err => {
+          reject(err);
+        });
+    });
+
+  }
+
+  getHomeWeatherForecast(uid: any, lat: any, long: any) {
+
+    return this.http.get(`https://mustseeum.com/henshuai/API/user/get_weather_forecast?uid=${uid}&lat=${lat}&lon=${long}`)
+  }
+
   getWeather(total_days: any) {
     let sunny, cloudy, rain;
     console.log("TOTAL DAYS", total_days)
@@ -48,13 +67,15 @@ export class DataPredictService {
   }
 
 
-  createPrediction(uid: any, pred_date: any, farm_area: any, cat_id: any) {
+  createPrediction(uid: any, pred_date: any, farm_area: any, cat_id: any, lat: any, lon: any) {
 
     var formData: any = new FormData();
     formData.append("user-id", uid);
     formData.append("date", pred_date);
     formData.append("farm-area", farm_area);
     formData.append("category-id", cat_id);
+    formData.append("lat", lat)
+    formData.append("long", lon)
 
     this.resCreatePred = this.http.post("https://mustseeum.com/henshuai/API/prediction/create", formData)
 
