@@ -12,9 +12,26 @@ export class PredictionComponent implements OnInit {
 
 
   crops: any[] = [
-    { value: '1', viewValue: 'Padi' },
-    { value: '2', viewValue: 'Jagung' },
-    { value: '3', viewValue: 'Kangkung' }
+    {
+      "category_id": "1",
+      "category_name": "Padi"
+    },
+    {
+      "category_id": "2",
+      "category_name": "Kangkung"
+    },
+    {
+      "category_id": "3",
+      "category_name": "Cabai"
+    },
+    {
+      "category_id": "4",
+      "category_name": "Jagung"
+    },
+    {
+      "category_id": "5",
+      "category_name": "Kedelai"
+    }
   ];
 
   date: any;
@@ -28,8 +45,17 @@ export class PredictionComponent implements OnInit {
   constructor(private route: Router, private predictService: DataPredictService) { }
 
   ngOnInit(): void {
+
     this.getLocation()
     this.local_data = this.getLocalStorage()
+
+    this.corps_form = this.predictService.getCategory(this.local_data['user_id']).subscribe((res: any) => {
+      if (res.message == "Success") {
+        this.crops = res.data
+        console.log("this.corps_form", this.crops)
+      }
+
+    })
   }
 
   back() {

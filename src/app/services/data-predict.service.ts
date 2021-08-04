@@ -11,6 +11,11 @@ export class DataPredictService {
 
   constructor(private http: HttpClient) { }
 
+
+  getCategory(uid:any){
+    return this.http.get(`https://mustseeum.com/henshuai/API/misc/get_categories?uid=${uid}`)
+  }
+
   getPosition(): Promise<any> {
     return new Promise((resolve, reject) => {
 

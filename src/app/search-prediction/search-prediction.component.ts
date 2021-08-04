@@ -43,6 +43,19 @@ export class SearchPredictionComponent implements OnInit {
       if (res.message == "Success") {
         console.log("Res", res.data)
         this.data_predict = res.data
+        this.data_predict.forEach((element: any) => {
+          if (element.category_id == '1') {
+            element.category_id = 'Padi'
+          } else if (element.category_id == '2') {
+            element.category_id = 'Kangkung'
+          } else if (element.category_id == '3') {
+            element.category_id = 'Cabai'
+          } else if (element.category_id == '4') {
+            element.category_id = 'Jagung'
+          } else {
+            element.category_id = 'Kedelai'
+          }
+        })
       } else {
         this.data_predict = null
       }

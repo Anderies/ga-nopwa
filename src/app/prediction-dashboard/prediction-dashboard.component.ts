@@ -13,7 +13,8 @@ export class PredictionDashboardComponent implements OnInit {
 
   data_predict: any = null;
   local_data: any;
-  term:any;
+  term: any;
+  catList: any;
   constructor(private router: Router,
     private predictService: DataPredictService) { }
 
@@ -30,15 +31,43 @@ export class PredictionDashboardComponent implements OnInit {
     return b;
   }
 
+  categoryChange(category: any) {
+    console.log("test", category)
+    if (category == '1') {
+      return 'Padi'
+    } else if (category == '2') {
+      return 'Kangkung'
+    } else if (category == '3') {
+      return 'Cabai'
+    } else if (category == '4') {
+      return 'Jagung'
+    } else {
+      return 'Kedelai'
+    }
+  }
+
   getPredictionList() {
     this.predictService.getPredictionList(this.local_data['user_id']).subscribe((res: any) => {
       if (res.message == "Success") {
-        console.log("Res", res.data)
         this.data_predict = res.data
+        this.data_predict.forEach((element: any) => {
+          if (element.category_id == '1') {
+            element.category_id = 'Padi'
+          } else if (element.category_id == '2') {
+            element.category_id = 'Kangkung'
+          } else if (element.category_id == '3') {
+            element.category_id = 'Cabai'
+          } else if (element.category_id == '4') {
+            element.category_id = 'Jagung'
+          } else {
+            element.category_id = 'Kedelai'
+          }
+        })
       } else {
         this.data_predict = null
       }
     })
+
   }
 
   generatePredict() {

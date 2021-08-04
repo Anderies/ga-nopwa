@@ -16,8 +16,8 @@
         <mat-form-field>
             <mat-label>Crop Category</mat-label>
             <mat-select ngModel (ngModelChange)="onCountryChanged($event)" required>
-                <mat-option *ngFor="let food of crops" [value]="food.value">
-                    {{food.viewValue}}
+                <mat-option *ngFor="let food of crops" [value]="food.category_id">
+                    {{food.category_name}}
                 </mat-option>
             </mat-select>
         </mat-form-field>

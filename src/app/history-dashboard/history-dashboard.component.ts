@@ -32,6 +32,19 @@ export class HistoryDashboardComponent implements OnInit {
     this.predictService.getHistoryList(b['user_id']).subscribe((res: any) => {
       // console.log("res", res)
       this.data_history = res.data
+      this.data_history.forEach((element: any) => {
+        if (element.category_id == '1') {
+          element.category_id = 'Padi'
+        } else if (element.category_id == '2') {
+          element.category_id = 'Kangkung'
+        } else if (element.category_id == '3') {
+          element.category_id = 'Cabai'
+        } else if (element.category_id == '4') {
+          element.category_id = 'Jagung'
+        } else {
+          element.category_id = 'Kedelai'
+        }
+      })
       console.log("this.data_history",this.data_history)
       
     })

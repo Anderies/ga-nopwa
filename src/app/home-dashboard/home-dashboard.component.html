@@ -14,7 +14,7 @@
             <div class="card-weather d-flex flex-column justify-content-evenly"
                 *ngFor="let data of weatherinfo;let i = index">
                 <div class="card-weather d-flex flex-column justify-content-evenly">
-                    <p class="txt-card-day">{{data.date | slice:0:2}}</p>
+                    <p class="txt-card-day">{{data?.day}}</p>
                     <img *ngIf="data.main == 'Rain'" class="logo-weather" src="../../assets/Icon awesome-cloud-rain.svg"
                         width="35">
                     <img *ngIf="data.main == 'Clear'" class="logo-weather"

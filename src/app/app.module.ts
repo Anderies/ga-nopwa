@@ -33,6 +33,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PredictionDetailComponent } from './prediction-detail/prediction-detail.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +70,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HttpClientModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
